@@ -1,0 +1,25 @@
+.overlay{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right bottom, rgb(125,226,97), rgb(66, 123, 181));
+}
+.card{
+   max-width:  80% !important;
+    box-shadow: rgba(0,0,0,0.2) 0px 0px 20px 10px inset !important;
+}
+p,h1{
+    color: #3FC54B;
+}
+h1{
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+p{
+    width: 70%;
+}
+.icon{
+    margin-top: 2.5rem !important;
+   font-size: 6rem!important;
+   line-height: normal !important;
+   color: #16cb99;
+}

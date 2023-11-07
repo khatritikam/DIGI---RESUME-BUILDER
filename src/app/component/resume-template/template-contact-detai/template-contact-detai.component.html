@@ -1,0 +1,87 @@
+
+<div fxLayout="column" fxLayoutAlign="center center">
+<!-- <button [ngStyle]="{'background-image':'url('+imageUrl+')'}" mat-fab class="profile-pic"></button> -->
+  <img class="profile-pic" [src]="imageUrl" width="100%" height="100%">
+<h1 class="mb-0">{{this.resume.contact_details.first_name}} {{this.resume.contact_details.last_name}}</h1>
+<app-template-buttons [resumeId]="resume._id"></app-template-buttons>
+<div fxLayout="row" fxLayoutGap="30px" class="container border-container mt-4">
+<mat-icon>account_circle</mat-icon>
+<p class="template-description">{{this.resume.contact_details.summary}}</p>
+</div>
+<div fxLayout="row" fxLayoutGap="30px" class="container">
+<mat-icon>call</mat-icon>
+<p class="template-description">{{this.resume.contact_details.phone_number}}</p>
+</div>
+<div *ngIf="this.resume.contact_details.linkedin_url" fxLayout="row" fxLayoutGap="30px" class="container">
+<mat-icon>link</mat-icon>
+<p class="template-description">{{this.resume.contact_details.linkedin_url}}</p>
+</div>
+<div *ngIf="this.resume.contact_details.website_url" fxLayout="row" fxLayoutGap="30px" class="container">
+<mat-icon>link</mat-icon>
+<p class="template-description"> {{this.resume.contact_details.website_url}}</p>
+</div>
+<div fxLayout="row" fxLayoutGap="30px" class="container border-container">
+<mat-icon>email</mat-icon>
+<p class="template-description">{{this.resume.contact_details.email}}</p>
+</div>
+<div fxLayout="row" fxLayoutGap="30px" class="container border-container">
+<mat-icon>home</mat-icon>
+<p class="template-description text-capitalize">{{this.resume.contact_details.address}} <br>
+  {{this.resume.contact_details.city}},
+  {{this.resume.contact_details.state}}<br>
+  {{this.resume.contact_details.country}},{{this.resume.contact_details.zip_code}}
+
+</p>
+</div>
+<ng-container *ngTemplateOutlet="skillTemplate"></ng-container>
+<ng-container *ngTemplateOutlet="languageTemplate"></ng-container>
+<ng-container *ngTemplateOutlet="strengthTemplate"></ng-container>
+<ng-container *ngTemplateOutlet="weaknessTemplate"></ng-container>
+</div>
+
+<ng-template #skillTemplate>
+<div *ngIf="this.resume.skills.length" fxLayout="row" fxLayoutGap="30px" class="container border-container">
+<mat-icon>calendar_today</mat-icon>
+<div fxLayout="column">
+ <h4>Professional skills</h4>
+ <app-template-skill-card *ngFor="let skill of this.resume.skills"
+                          [skill]="skill"></app-template-skill-card>
+</div>
+</div>
+</ng-template>
+<ng-template #languageTemplate>
+<div *ngIf="this.resume.languages.length" fxLayout="row" fxLayoutGap="30px" class="container border-container">
+<mat-icon>calendar_today</mat-icon>
+<div fxLayout="column">
+ <h4>Languages</h4>
+ <app-template-language-card *ngFor="let language of this.resume.languages"
+                             [language]="language"></app-template-language-card>
+</div>
+</div>
+</ng-template>
+<ng-template #strengthTemplate>
+<div *ngIf="this.resume.strengths.length"
+  fxLayout="row" fxLayoutGap="30px" class="container border-container">
+<mat-icon>favorite</mat-icon>
+<div fxLayout="column">
+ <h4>Strength</h4>
+ <app-template-strength-card
+   *ngFor="let strength of this.resume.strengths"
+   [strength]="strength"></app-template-strength-card>
+</div>
+</div>
+</ng-template>
+<ng-template #weaknessTemplate>
+<div *ngIf="this.resume.weakness.length"
+  fxLayout="row" fxLayoutGap="30px" class="container border-container">
+<mat-icon>favorite</mat-icon>
+<div fxLayout="column">
+ <h4>Weakness</h4>
+ <app-template-weakness-card
+   *ngFor="let weakness of this.resume.weakness"
+   [weakness]="weakness"></app-template-weakness-card>
+</div>
+</div>
+</ng-template>
+
+  

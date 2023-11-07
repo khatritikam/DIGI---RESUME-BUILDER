@@ -1,0 +1,14 @@
+<div fxLayout="column" class="p-3">
+    <div fxLayout="row">
+        <mat-form-field class="w-100">
+            <input matInput [value]="link" placeholder="Resume link" >
+        </mat-form-field>
+        <button fxLayoutAlign="end" (click)="copy()" matTooltip="Copy to clipboard" mat-icon-button>
+            <mat-icon>filter_none</mat-icon>
+        </button>
+    </div>
+    <div>
+        <share-buttons [exclude]="['copy', 'print']" [showText]="true" theme="material-dark"
+         [url]="link" [title]="'Guys checkout my Resume'"></share-buttons>
+    </div>
+</div>

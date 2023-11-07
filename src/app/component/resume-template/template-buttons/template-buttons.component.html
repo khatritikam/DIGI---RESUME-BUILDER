@@ -1,0 +1,11 @@
+<div class="{{this.isLeftPanelEnabled === true ? '':'mt-4'}}" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
+    <button (click)="editResume()" mat-mini-fab matTooltip="edit resume">
+      <mat-icon>assignment</mat-icon>
+    </button>
+    <button (click)="editProfile()" mat-mini-fab matTooltip="edit profile image or vide">
+      <mat-icon>videocam</mat-icon>
+    </button>
+    <button (click)="sharelink()" mat-mini-fab matTooltip="share resume">
+      <mat-icon>share</mat-icon>
+    </button>
+  </div>

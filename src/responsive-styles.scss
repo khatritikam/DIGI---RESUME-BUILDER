@@ -1,0 +1,28 @@
+
+@media screen and (max-width: 599px) {
+    .res-onboarding-title {
+      text-align: center !important;
+      font-size: 2rem !important;
+    }
+    
+    .res-header-image {
+      width: 45% !important;
+      margin-left: -1rem !important;
+    }
+
+    .mat-mdc-menu-panel {
+      background: #1d1c1bc2 !important;
+    }
+  
+    .res-onboarding-desc {
+      text-align: center !important;
+      font-size: 1rem !important;
+    }
+
+    .res-expansion-panel{
+      width: 95% !important;
+    }
+    .res-setting-container {
+      padding: 2rem !important;
+    }
+  }

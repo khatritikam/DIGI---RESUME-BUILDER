@@ -1,0 +1,39 @@
+<form (ngSubmit)="this.signupForm.valid && signup()" [formGroup]="signupForm" class="overlay"
+    fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="40px">
+    <img width="20%" src="../../../assets/digiresume-green.png" alt="">
+    <mat-card fxLayout="column" class="grad">
+       <div fxLayout="column" class="pad-1">
+        <h2 class="text-capitalize">create account</h2>
+        <mat-form-field>
+            <input formControlName="email" type="email" matInput placeholder="Email">
+            <mat-error>Valid Email is Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="password" type="password" matInput placeholder="Password"/>
+            <mat-error> (8-12 Digit) Password is Required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="confirm_password" matInput placeholder="Confirm Password"/>
+            <mat-error>Confirm Password is Required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="name" matInput placeholder="Your Name"/>
+            <mat-error>Valid Name is Required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="job_category" matInput placeholder="Job category"/>
+            <mat-error>Valid Job Category is Required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="experience_level" type="email" matInput placeholder="Your Experience Level"/>
+            <mat-error>Valid Exp Level is Required</mat-error>
+          </mat-form-field>
+          <div class="mt-3" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end">
+            <button (click)="login()" type="button" class="text-capitalize bg-primary" mat-raised-button>Go To Login</button>
+            <button type="submit"  class="bg-success" mat-raised-button>Signup</button>
+          </div>
+          <mat-spinner *ngIf="this.loading" color="accent" diameter="40"></mat-spinner>
+       </div>
+  
+    </mat-card>
+</form>

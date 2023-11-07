@@ -1,0 +1,16 @@
+<div class="main-div" fxLayout="{{this.isLeftPanelEnabled ? 'row': 'column'}}" fxLayout.xs="column"
+  fxLayoutAlign="{{this.isLeftPanelEnabled === true ? 'center start':'center center'}}" fxLayoutGap="50px" *ngIf="this.resume">
+  <mat-card class="sidebar"*ngIf="this.isLeftPanelEnabled">
+    <div class="p-2" fxLayout="column" fxLayoutGap="20px">
+      <button class="views-btn" matTooltip="Views: {{this.resume.views}}" style="background: #f1c232;" mat-mini-fab
+        *ngIf="this.resume && this.isPreview && this.resume.contact_details ">
+        <mat-icon style="color: black">remove_red_eye</mat-icon>
+      </button>
+      <app-template-contact-detail [resume]="resume" class="mt-3">
+      </app-template-contact-detail>
+    </div>
+  </mat-card>
+  <app-template-buttons [isLeftPanelEnabled]="isLeftPanelEnabled" *ngIf="!isLeftPanelEnabled"
+    [resumeId]="resume._id"></app-template-buttons>
+  <app-template-details [resume]="resume"></app-template-details>
+</div>

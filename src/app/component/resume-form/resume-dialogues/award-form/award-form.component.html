@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="form.valid && addOrUpdate()" class="p-3">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <mat-form-field>
+        <textarea formControlName="awards_and_achivements" rows="5" matInput
+                  placeholder="Describe about your awards and achievement"></textarea>
+        <mat-error>This Field is Required</mat-error>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">
+        <button mat-raised-button class="bg-success text-white" *ngIf="this.data.award">Update</button>
+        <button mat-raised-button class="bg-success text-white" *ngIf="!this.data.award">Save</button>
+        <button type="button" (click)="cancel()" mat-raised-button color="warn">Cancel</button>
+      </div>
+    </div>
+  </form>

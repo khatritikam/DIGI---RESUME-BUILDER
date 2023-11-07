@@ -1,1 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+
+//@import '~ngx-sharebuttons/themes/default';
+//@import '~@ngx-share/button/styles/themes/modern/modern-dark-theme';
+
+html, body { height: 100%; }
+body {
+       margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+       background-color: #fafafa;
+}
+  
+.overlay {
+  width: 100%;
+  height: 100%;
+}
+.mdc-tab__text-label{
+  color: white !important;
+}
+.mat-stepper-horizontal{
+  background-color: #fafafa !important;
+}
+mat-expansion-panel-header{
+  height: 4rem !important;
+  padding: 10px !important;
+}
+.card-outer-div{
+  position: relative;
+  background: #e5fade;
+  border: 2.5px dashed #d8d8d8;
+  width: 90%;
+  height: 7rem !important;
+}
+.resume-form-info-card-heading {
+  margin: 0 !important;;
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+  text-align: start !important;
+}
+
+.resume-form-mat-icon-button {
+  margin-top: 2rem !important;
+}
+
+.resume-form-mat-icon {
+  color: white !important;
+  font-size: 20px !important;
+}
+
+.card-outer-div:hover .hover-container{
+  display: block;
+  background: rgba(0,0,0,0.3);
+}
+.card-outer-div:hover .hover{
+  opacity: 1;
+}
+.hover{
+  opacity: 0;
+  text-align: center;
+  transition: opacity .35s ease;
+}
+.hover-container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0);
+  height: 100%;
+  width: 100%;
+  transition: background 0.5s ease;
+}
+
+  .alert-success{
+    background-color: #dff0d8 !important;
+    border-width: 2px !important;
+    border-color: #d0e9c6 !important;
+    color: #3c763d !important;
+  }
+  
+  .alert-error{
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+  }
+  
+  .alert .mat-simple-snackbar {
+    justify-content: center;
+  }
+  .grad {
+    background-color: #f2f2f2;
+    background-image: linear-gradient(#ffffff, #f2f2f2);
+  }
+  .pad-1{
+    padding: 25PX;
+  }
+
+  .setting-label {
+    font-size: 1.2rem !important;
+  }
+  .settings-input {
+    width: 70% !important;
+  }
+
+  .template-description {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 17pt;
+    word-wrap: break-word;
+    overflow: hidden;
+   // padding: 5px;
+  }
+  mat-progress-bar{
+    width: 100%;
+    background-color: white;
+}

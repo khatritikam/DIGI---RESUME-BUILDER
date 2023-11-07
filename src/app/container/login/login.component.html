@@ -1,0 +1,24 @@
+<form class="overlay" fxLayoutAlign="center center"
+          fxLayout="column"
+          fxLayoutGap="40px" (ngSubmit)="this.loginForm.valid && login()" [formGroup]="this.loginForm">
+      <img width="20%" src="../assets/digiresume-green.png">
+      <mat-card fxLayout="column" class="grad">
+        <div fxLayout="column" class="pad-1">
+          <h2 class="text-capitalize">Log in</h2>
+        <mat-form-field>
+          <input formControlName="email" type="email" matInput placeholder="Email"/>
+          <mat-error>Valid Email is Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="password" type="password" matInput placeholder="Password"/>
+          <mat-error> (8-12 Digit) Password is Required</mat-error>
+        </mat-form-field>
+        <a href="/forgot-password" class="mt-2">Forgot Password?</a>
+        <div class="mt-4" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end">
+          <button (click)="signup()" type="button" class="text-capitalize bg-primary" mat-raised-button>Go to Signup</button>
+          <button type="submit" class="bg-success" mat-raised-button>Login</button>
+        </div>
+        <mat-spinner *ngIf="this.loading" color="accent" diameter="40"></mat-spinner>
+        </div>
+      </mat-card>
+    </form>

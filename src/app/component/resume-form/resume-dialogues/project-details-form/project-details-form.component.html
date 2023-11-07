@@ -1,0 +1,29 @@
+<form [formGroup]="this.form" (ngSubmit)="this.form.valid && addOrUpdate()" class="p-3">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <mat-form-field>
+        <input formControlName="title" matInput placeholder="title"/>
+        <mat-error>Title is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea formControlName="description" matInput placeholder="Description"></textarea>
+        <mat-error>Description is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="duration" matInput placeholder="duration"/>
+        <mat-error>Duration is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="role" matInput placeholder="role"/>
+        <mat-error>Role is Required</mat-error>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">
+        <button fxFlexAlign="end" mat-raised-button class="bg-success text-white">
+          <span *ngIf="this.data.projectDetail">Update</span>
+          <span *ngIf="!this.data.projectDetail">Add</span>
+        </button>
+        <button (click)="this.dialogRef.close()" type="button"  fxFlexAlign="end" mat-raised-button color="warn">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>

@@ -1,0 +1,44 @@
+<form [formGroup]="educationForm" (ngSubmit)="educationForm.valid && addOrUpdate()" class="p-3">
+    <div fxLayout="column" >
+        <mat-form-field>
+          <input formControlName="school_name" matInput placeholder="School Name or College Name"/>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="city" matInput placeholder="City"/>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="state" matInput placeholder="State"/>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="field" matInput placeholder="Field"/>
+          <mat-hint>
+            Example @ B.Tech in Computer Science
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="percentage" matInput placeholder="Percentage"/>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="degree_type" matInput placeholder="Degree Type"/>
+          <mat-hint>
+            Example @ Diploma,Graduation
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Graduation Month</mat-label>
+          <mat-select formControlName="graduation_month">
+            <mat-option *ngFor="let month of monthArray" [value]="month">
+                {{month}}
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="graduation_year" matInput placeholder="Graduation Year"/>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">
+        <button mat-raised-button class="bg-success text-white" *ngIf="data.education">Update</button>
+        <button mat-raised-button class="bg-success text-white" *ngIf="!data.education">Save</button>
+        <button type="button" (click)="dialogRef.close()" mat-raised-button color="warn" class="text-white">Cancel</button>
+      </div>    
+</form>

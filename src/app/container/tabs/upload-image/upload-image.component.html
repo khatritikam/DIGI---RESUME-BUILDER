@@ -1,0 +1,20 @@
+<div *ngIf="!loading" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="40px" class="mt-5">
+    <input (change)="onImageSelect($event)" accept="image/jpeg,image/png" #fileInput type="file" hidden>
+    <h1 class="text-capitalize text-center fw-bold fs-3">
+        <mat-icon>cloud_upload</mat-icon>
+        upload profile image
+    </h1>
+    <mat-hint class="text-dark fs-6">Image size must be upto 2mb</mat-hint>
+    <button (click)="onFileSelect()" class="bg-success text-white text-uppercase fs-6" type="button" mat-raised-button  *ngIf="!isUploaded">
+        <mat-icon class="me-0">{{selectButtonIcon}}</mat-icon>
+        <span *ngIf="!isSelected">select</span>
+        <span *ngIf="isSelected">change</span>
+    </button>
+    <img #previewImg [src]="url" height="200px">
+    <button (click)="saveImg()" *ngIf="isSelected && !isUploaded" mat-raised-button class="bg-primary text-white text-uppercase">Save</button>
+    <button (click)="deleteImg()" *ngIf="isSelected && isUploaded" mat-raised-button class="bg-primary text-white text-uppercase">Delete</button>
+</div>
+<div  *ngIf="loading" fxLayout="column" fxLayoutAlign="center center" style="height: 100vh;">
+    <mat-spinner></mat-spinner>
+</div>
+

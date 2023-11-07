@@ -1,0 +1,41 @@
+mat-card {
+    width: 250px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    height: 271px;
+    transition: all 0.5s;
+    margin-bottom: 1rem;
+}
+
+mat-icon {
+    color: white;
+}
+
+button {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.resume-hover {
+    position: absolute;
+    background-color: rgba(36, 36, 36, 0.81);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    height: calc(100% - 45px);
+    width: 100%;
+    opacity: 0;
+}
+
+.resume-hover:hover {
+    opacity: 0.8;
+    transition: opacity .8s;
+}
+.resume-name{
+    color: #538ec3;
+    background: #FAFAFF;
+    width: 100%;
+    text-align: center;
+}

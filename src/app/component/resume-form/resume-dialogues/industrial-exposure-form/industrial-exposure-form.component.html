@@ -1,0 +1,52 @@
+<form [formGroup]="form" (submit)="this.form.valid && addOrUpdate()" class="p-3">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <mat-form-field>
+        <input formControlName="organisation" matInput placeholder="Organisation"/>
+        <mat-error>Organisation is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="city" matInput placeholder="City"/>
+        <mat-error>City is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="state" matInput placeholder="State"/>
+        <mat-error>State is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Starting Month</mat-label>
+        <mat-select formControlName="start_month">
+          <mat-option *ngFor="let month of this.monthArray" [value]="month">
+            {{month}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="start_year" matInput type="number" placeholder="Starting Year"/>
+        <mat-error>Starting Year is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>End Month</mat-label>
+        <mat-select formControlName="end_month">
+          <mat-option *ngFor="let month of this.monthArray" [value]="month">
+            {{month}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="end_year" matInput type="number" placeholder="End Year (Leave this if you are Still Working)"/>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="work" matInput placeholder="Tell about your Work"/>
+        <mat-error>This Field is Required</mat-error>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">
+        <button style="    width: 10%;" fxFlexAlign="end" mat-raised-button class="bg-success text-white">
+          <span *ngIf="this.data.industrialExposure">Update</span>
+          <span *ngIf="!this.data.industrialExposure">Add</span>
+        </button>
+        <button (click)="cancel()" type="button" class="text-white" fxFlexAlign="end" mat-raised-button color="warn">Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+

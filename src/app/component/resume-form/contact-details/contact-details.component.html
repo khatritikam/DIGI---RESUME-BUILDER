@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="card-container">
+    <div fxLayoutAlign="center center"  fxLayout="column" class="card-outer-div">
+       <ng-container *ngIf="!contactDetails">  
+            <h3 class="p-4 mt-4 text-center fw-bold">No Contact Details Added Yet.</h3>
+        </ng-container>
+        <ng-container *ngIf="contactDetails">
+            <h3 class="m-0 fw-bold">{{contactDetails.first_name}}</h3>
+            <h3 class="m-0 fw-bold">{{contactDetails.last_name}}</h3>
+            <p class="m-0">{{contactDetails.address}}</p>
+            <p class="m-0">{{contactDetails.city}}</p>
+            <p class="m-0">{{contactDetails.country}}</p>
+        </ng-container>
+        <div fxLayoutWrap="wrap" fxLayoutAlign="center center">
+           <div class="hover-container">
+            <div class="hover justify-content-center align-items-center mt-4" >
+                <button mat-icon-button (click)="opneContactForm()">
+                    <mat-icon *ngIf="!contactDetails" class="text-white">add</mat-icon>
+                    <mat-icon *ngIf="contactDetails" class="text-white">create</mat-icon>
+                </button>
+            </div>
+           </div>
+        </div>
+    </div>
+</div>

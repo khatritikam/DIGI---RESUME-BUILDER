@@ -1,0 +1,25 @@
+<form [formGroup]="this.form" (submit)="this.form.valid && addOrUpdate()" class="p-3">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <mat-form-field>
+        <input formControlName="skill" matInput placeholder="Skill"/>
+        <mat-error>Skill is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Level</mat-label>
+        <mat-select formControlName="level">
+          <mat-option *ngFor="let level of this.levelArray" [value]="level">
+            {{level}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Please provide A Valid Level</mat-error>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">
+        <button  fxFlexAlign="end" mat-raised-button class="bg-success text-white">
+          <span *ngIf="this.data.skill">Update</span>
+          <span *ngIf="!this.data.skill">Add</span>
+        </button>
+        <button (click)="cancel()" type="button" class="text-white" fxFlexAlign="end" mat-raised-button color="warn">Cancel
+        </button>
+      </div>
+    </div>
+  </form>
